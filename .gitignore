@@ -1,0 +1,8 @@
+.volumes/
+.env
+
+__pycache__/
+
+dbt/data_pipeline_platform/target/
+dbt/data_pipeline_platform/logs/
+dbt/data_pipeline_platform/dbt_packages/
