@@ -1,0 +1,22 @@
+name: 'data_pipeline_platform'
+version: '1.0.0'
+profile: 'data_pipeline_platform'
+
+models:
+  data_pipeline_platform:
+    raw-area:
+      +schema: raw
+      +materialized: table
+      +tags: ['raw']
+    staging-area:
+      +schema: staging
+      +materialized: table
+      +tags: ['staging']
+    intermediate-area:
+      +schema: intermediate
+      +materialized: table
+      +tags: ['intermediate']
+    marts-area:
+      +schema: marts
+      +materialized: table
+      +tags: ['marts']

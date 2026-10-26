@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: xptoz_dw
+    schema: public
+    tables:
+      - name: users_info
