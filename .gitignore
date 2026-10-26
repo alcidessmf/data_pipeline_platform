@@ -1,8 +1,9 @@
 .env
 venv/
-volumes/
-
+.volumes/
 __pycache__/
+
+build.log
 
 dbt/**/target/
 dbt/**/logs/
