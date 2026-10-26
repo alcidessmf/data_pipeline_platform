@@ -2,13 +2,12 @@ import psycopg2
 from faker import Faker
  
 DB_CONFIG = {
-    "host": "INSERIR HOST AQUI",
-    "user": "INSERIR USER AQUI",
-    "password": "INSERIR PASSWORD AQUI",
-    "port": "5432",
-    "dbname": "INSERIR DBNAME AQUI"
+    "host": "localhost",
+    "user": "xptoz",
+    "password": "123456",
+    "port": "5433",
+    "dbname": "xptoz_dw"
 }
- 
  
 def conectar_banco():
     try:
