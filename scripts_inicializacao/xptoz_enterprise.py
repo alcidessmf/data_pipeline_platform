@@ -1,14 +1,29 @@
+import os
+import sys
+from pathlib import Path
+from dotenv import load_dotenv
+
 import psycopg2
 from faker import Faker
- 
+
+ENV_PATH = Path(__file__).resolve().parent.parent / ".env"
+load_dotenv(ENV_PATH)
+
+def obter_variavel(nome, padrao=None):
+    valor = os.getenv(nome, padrao)
+    if valor is None or valor == "":
+        sys.exit(f"Variável {nome} não encontrada. Confira o arquivo {ENV_PATH}")
+    return valor
+
+
 DB_CONFIG = {
-    "host": "localhost",
-    "user": "xptoz",
-    "password": "123456",
-    "port": "5433",
-    "dbname": "xptoz_dw"
+    "host": obter_variavel("APP_DB_HOST", "localhost"),
+    "port": obter_variavel("APP_DB_PORT", "5433"),
+    "user": obter_variavel("APP_DB_USER"),
+    "password": obter_variavel("APP_DB_PASSWORD"),
+    "dbname": obter_variavel("APP_DB_NAME"),
 }
- 
+
 def conectar_banco():
     try:
         conn = psycopg2.connect(**DB_CONFIG)
